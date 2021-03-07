@@ -1,0 +1,49 @@
+html, body { margin: 0; padding: 0;}
+
+.generator-wrapper { text-align: center; width: 100%; color: #494949;
+
+	#display-row{padding-top: 50px;}
+
+	.main-display { min-height: 30px; font-size: 20px;}
+
+	.keypad { display: block;
+
+		.key-row { width: 100%; padding: 50px 0px 0px 0px;}
+
+		.keypad-content { display: inline-block; margin: 0 5%;
+
+			.key { width: 4em; height: 4em; text-align: center; border: 1px solid #a09f9f; border-radius: 15px; display: inline-block; cursor: pointer;
+
+				.primary-char { display: block; font-size: 1.8em; height: 1em; margin-top: 0.2em; }
+
+				.sub-chars { font-size: 0.9em; }
+			}
+
+			.key:hover { background-color: #673ab7; color: #ffffff; user-select: none; border: 1px solid #673ab7;}
+		}
+	}
+}
+
+
+.overlay-wrapper { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7); transition: opacity 500ms; visibility: visible; opacity: 1;
+	 
+	.popup { margin: 100px auto; padding: 20px; background: #ffffff; border-radius: 10px;  position: relative;
+	  
+		.close { position: absolute; top: 20px; right: 30px; transition: all 200ms; font-size: 30px; font-weight: bold; text-decoration: none; color: #673ab7; }
+	
+		.close:hover { cursor: pointer; }
+	
+		.overlay-content { max-height: 90%; overflow: auto; 
+		
+			.results-output { display: block; overflow-y: scroll; max-height: 500px; word-wrap: break-word; }
+		
+		}
+
+	}
+
+}
+  
+
+
+
+

@@ -1,0 +1,125 @@
+<div class="application-wrapper">
+   <mat-toolbar color="primary"><span>Mnemonic Generator</span></mat-toolbar>
+   <div class="generator-wrapper">
+     <div class="row" id="display-row">
+       <div class="col-md-4"></div>
+       <div class="col-md-4">
+         <div class="main-display">{{ mainText }}</div>
+       </div>
+       <div class="col-md-4"></div>
+     </div>
+     <div class="row">
+       <div class="col-md-12">
+         <p>
+           Enter between 1 and 6 digits using the keypad below, then press 'GO'
+         </p>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-4"></div>
+       <div class="col-md-4">
+         <div class="keypad">
+           <div class="row">
+             <div class="key-row">
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('1')">1</span>
+                   <span>&nbsp;</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('2')">2</span>
+                   <span class="sub-chars">ABC</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('3')">3</span>
+                   <span class="sub-chars">DEF</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="key-row">
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('4')">4</span>
+                   <span class="sub-chars">GHI</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('5')">5</span>
+                   <span class="sub-chars">JKL</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('6')">6</span>
+                   <span class="sub-chars">MNO</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="key-row">
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('7')">7</span>
+                   <span class="sub-chars">PQRS</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('8')">8</span>
+                   <span class="sub-chars">TUV</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('9')">9</span>
+                   <span class="sub-chars">WXYZ</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="key-row">
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="allClear()">AC</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="pressKey('0')">0</span>
+                 </div>
+               </div>
+               <div class="keypad-content">
+                 <div class="key">
+                   <span class="primary-char" (click)="generateMnemonic(this.mainText)">GO</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-4"></div>
+     </div>
+   </div>
+   <div class="overlay-wrapper" *ngIf="showPopup">
+     <div class="col-md-3"></div>
+     <div class="popup col-md-6">
+       <h2>Your Results</h2>
+       <p>Mnemonics generated based upon: "{{mainText}}"</p>
+       <a class="close" (click)="showPopup = false">&times;</a>
+       <div class="overlay-content">
+         <div class="results-output">{{ displayedResults }}</div>
+       </div>
+     </div>
+     <div class="col-md-3"></div>
+   </div>
+ </div>
+ 
